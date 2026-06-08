@@ -292,9 +292,7 @@ header p{
 
 <script>
 
-function openPlaylist(title, image, lyrics, lyricsLink,
-    recommendText,
-    recommendLink){
+function openPlaylist(title, image, lyrics, lyricsLink, recommendText, recommendLink){
 
     document.getElementById("homePage").style.display = "none";
     document.getElementById("detailPage").style.display = "block";
@@ -303,12 +301,12 @@ function openPlaylist(title, image, lyrics, lyricsLink,
     document.getElementById("coverImage").src = image;
 
     document.getElementById("favoriteLyrics").innerText = lyrics;
- document.getElementById("lyricsButton").href = lyricsLink;
+    
+     document.getElementById("lyricsButton").href = lyricsLink;
 
     document.getElementById("recommendText").innerText = recommendText;
 
     document.getElementById("recommendButton").href = recommendLink;
-}
 }
 
 function goBack(){
