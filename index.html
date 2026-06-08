@@ -133,6 +133,37 @@ header p{
     color:#1DB954;
     font-weight:bold;
 }
+    .info-box{
+    background:#1a1a1a;
+    padding:25px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.info-box h3{
+    color:#1DB954;
+    margin-bottom:10px;
+}
+
+.info-box p{
+    color:#ddd;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.recommend-btn{
+    display:inline-block;
+    padding:12px 20px;
+    background:#1DB954;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.recommend-btn:hover{
+    opacity:0.85;
+}
 </style>
 </head>
 
@@ -213,18 +244,38 @@ header p{
 
 <h2 id="playlistTitle" class="playlist-title"></h2>
 
-</ul>
+<div class="info-box">
+
+    <h3>📝 좋아하는 가사</h3>
+
+    <p id="favoriteLyrics">
+        가사가 표시됩니다.
+    </p>
+
+    <h3>🎵 추천곡</h3>
+
+    <a id="recommendButton"
+       class="recommend-btn"
+       href="#"
+       target="_blank">
+       추천곡 들으러 가기
+    </a>
+
+</div>
 </div>
 
 <script>
 
-function openPlaylist(title, image){
+function openPlaylist(title, image, lyrics, link){
 
     document.getElementById("homePage").style.display = "none";
     document.getElementById("detailPage").style.display = "block";
 
     document.getElementById("playlistTitle").innerText = title;
     document.getElementById("coverImage").src = image;
+
+    document.getElementById("favoriteLyrics").innerText = lyrics;
+    document.getElementById("recommendButton").href = link;
 }
 
 function goBack(){
