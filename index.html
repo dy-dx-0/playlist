@@ -173,18 +173,46 @@ header p{
     gap:20px;
     margin-top:20px;
 }
-    .recommend-cover{
-    width:140px;
-    height:140px;
+.recommend-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.recommend-info{
+    flex:1;
+    text-align:left;
+}
+
+#recommendText{
+    text-align:left;
+    margin-bottom:15px;
+}
+
+.recommend-cover{
+    width:120px;
+    height:120px;
     object-fit:cover;
     border-radius:12px;
-    display:block;
-    margin:0 auto 20px;
+    flex-shrink:0;
 }
-    @media (max-width:768px){
+@media (max-width:768px){
 
     .info-container{
         flex-direction:column;
+    }
+
+    .recommend-content{
+        flex-direction:column;
+    }
+
+    .recommend-info{
+        text-align:center;
+    }
+
+    #recommendText{
+        text-align:center;
     }
 
 }
@@ -206,7 +234,7 @@ header p{
     <div class="playlist-card"
          onclick="openPlaylist('KiiKii(키키)- 404(New Era)','images/kiki404.jpg','404 백지를 내도 백점',
 'https://youtu.be/3_l-UI4prVY?si=zT84bX0YvUfFNaP5','NMIXX- Crush On You',
-'https://youtu.be/sdDY6tSJjFg?si=h5Xzkd70EN7Mvk6V')">
+'https://youtu.be/sdDY6tSJjFg?si=h5Xzkd70EN7Mvk6V','images/nmixx.jpg')">
         <img src="images/kiki404.jpg">
         <h3>KiiKii(키키)- 404(New Era)</h3>
     </div>
@@ -214,7 +242,7 @@ header p{
     <div class="playlist-card"
          onclick="openPlaylist('이브- NAIL','images/nail.jpg','Stop, stop thinking about 내일',
 'https://youtu.be/_4MOByKY5eM?si=YlSFhKY40L8ggmvv','클래지콰이- She Is',
-'https://youtu.be/zjVt73gD1fc?si=KQJMeA8mGShpGc7M')">
+'https://youtu.be/zjVt73gD1fc?si=KQJMeA8mGShpGc7M','images/sheis.jpg')">
         <img src="images/nail.jpg">
         <h3>이브- NAIL</h3>
     </div>
@@ -222,7 +250,7 @@ header p{
     <div class="playlist-card"
          onclick="openPlaylist('유라- 수영해','images/swim.jpg','굴절들이 내 몸을 마시려 하고 특이하고 울렁거릴 장면이겠지 Hey baby baby Lets go swimming pool yeah',
 'https://youtu.be/3b6T-3Cczyo?si=_YTCKjDub6DF7IE8','Amaarae- Princess Going Digital',
-'https://youtu.be/kxi9q08WFfc?si=ouLkEbpXURsb8-vp')">
+'https://youtu.be/kxi9q08WFfc?si=ouLkEbpXURsb8-vp','images/juice.jpg')">
         <img src="images/swim.jpg">
         <h3>유라- 수영해</h3>
     </div>
@@ -230,7 +258,7 @@ header p{
     <div class="playlist-card"
          onclick="openPlaylist('basecamp- 사랑','images/love.jpg','사실은 널 생각하다 떠오른 거야 이 단어가 마음이 비틀 비틀거릴 때 아주 가끔 찾아와 볼래',
 'https://youtu.be/3PMnPeNbsFQ?si=F6HltiZxYga8wMxY','원슈타인- Single',
-'https://youtu.be/0maCwK1Ms78?si=YfQMMjXyVvREdobI')">
+'https://youtu.be/0maCwK1Ms78?si=YfQMMjXyVvREdobI','images/won.jpg')">
         <img src="images/love.jpg">
         <h3>basecamp- 사랑</h3>
     </div>
@@ -238,7 +266,7 @@ header p{
         <div class="playlist-card"
          onclick="openPlaylist('잔나비- DOLMARO','images/dolmaro.jpg', '방황하다 멈춰 설 멋진 집이 있던 곳 영원히 기다리고 있어요',
 'https://youtu.be/1uh7UjyVd4U?si=yh6Rb1O-awyh6_z2','Sabrina Carpenter- Go Go Juice',
-'https://youtu.be/uCNr2iCgSPs?si=X8qr8eIsHhdpu7dE')">
+'https://youtu.be/uCNr2iCgSPs?si=X8qr8eIsHhdpu7dE','images/sab.jpg')">
         <img src="images/dolmaro.jpg">
         <h3>잔나비- DOLMARO</h3>
     </div>
@@ -246,7 +274,7 @@ header p{
     <div class="playlist-card"
          onclick="openPlaylist('키키- I DO ME','images/idome.jpg','내 직감은 늘 맞으니깐',
 'https://youtu.be/rupiDaKgnFM?si=1Xc9UqrGhcj1AqWG','아이브- REBEL HEART',
-'https://youtu.be/sJWzsH9Y4KY?si=NaUcx427I11DRjlD')">
+'https://youtu.be/sJWzsH9Y4KY?si=NaUcx427I11DRjlD','images/ive.jpg')">
         <img src="images/idome.jpg">
         <h3>KiiKii(키키)- I DO ME</h3>
     </div>
@@ -254,7 +282,7 @@ header p{
     <div class="playlist-card"
          onclick="openPlaylist('BOYNEXTDOOR- fadeaway','images/fadeaway.jpg','앞만 보고 달려가다 넘지 못하는 벽에 부딪히게 돼도 당황하지 말고, 준비한 걸 해',
 'https://youtu.be/I6StVU3kABM?si=kepROTRMfTCiY3UP','에스파- flowers',
-'https://youtu.be/EO7s8AzviQI?si=R6IqCmW7w3IaCe8V')">
+'https://youtu.be/EO7s8AzviQI?si=R6IqCmW7w3IaCe8V','images/aespa.jpg')">
         <img src="images/fadeaway.jpg">
         <h3>BOYNEXTDOOR- fadeaway</h3>
     </div>
@@ -262,7 +290,7 @@ header p{
     <div class="playlist-card"
          onclick="openPlaylist('WOODZ- HIJACK','images/hijack.jpg','난 겁 없이 살아 매일을 매일을 매일을 매일을',
 'https://youtu.be/UKaLyV3ZQMM?si=4UAESwE6lebA082p','&team- go in blind',
-'https://youtu.be/106iN6cTUBY?si=L6LjO8C76UhQ70_X')">
+'https://youtu.be/106iN6cTUBY?si=L6LjO8C76UhQ70_X','images/blind.jpg')">
         <img src="images/hijack.jpg">
         <h3>WOODZ- HIJACK</h3>
     </div>
