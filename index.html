@@ -248,7 +248,7 @@ header p{
     </div>
 
     <div class="playlist-card"
-         onclick="openPlaylist('유라- 수영해','images/swim.jpg','굴절들이 내 몸을 마시려 하고 특이하고 울렁거릴 장면이겠지 Hey baby baby Lets go swimming pool yeah',
+         onclick="openPlaylist('유라- 수영해','images/swim.jpg','굴절들이 내 몸을 마시려 하고<br>특이하고 울렁거릴 장면이겠지<br>Hey baby baby<br>Lets go swimming pool yeah',
 'https://youtu.be/3b6T-3Cczyo?si=_YTCKjDub6DF7IE8','Amaarae- Princess Going Digital',
 'https://youtu.be/kxi9q08WFfc?si=ouLkEbpXURsb8-vp','images/juice.jpg')">
         <img src="images/swim.jpg">
@@ -256,7 +256,7 @@ header p{
     </div>
 
     <div class="playlist-card"
-         onclick="openPlaylist('basecamp- 사랑','images/love.jpg','사실은 널 생각하다 떠오른 거야 이 단어가 마음이 비틀 비틀거릴 때 아주 가끔 찾아와 볼래',
+         onclick="openPlaylist('basecamp- 사랑','images/love.jpg','사실은 널 생각하다<br>떠오른 거야 이 단어가<br>마음이 비틀 비틀거릴 때<br>아주 가끔 찾아와 볼래',
 'https://youtu.be/3PMnPeNbsFQ?si=F6HltiZxYga8wMxY','원슈타인- Single',
 'https://youtu.be/0maCwK1Ms78?si=YfQMMjXyVvREdobI','images/won.jpg')">
         <img src="images/love.jpg">
@@ -264,7 +264,7 @@ header p{
     </div>
     
         <div class="playlist-card"
-         onclick="openPlaylist('잔나비- DOLMARO','images/dolmaro.jpg', '방황하다 멈춰 설 멋진 집이 있던 곳 영원히 기다리고 있어요',
+         onclick="openPlaylist('잔나비- DOLMARO','images/dolmaro.jpg', '방황하다 멈춰 설 멋진 집이 있던 곳<br>영원히 기다리고 있어요',
 'https://youtu.be/1uh7UjyVd4U?si=yh6Rb1O-awyh6_z2','Sabrina Carpenter- Go Go Juice',
 'https://youtu.be/uCNr2iCgSPs?si=X8qr8eIsHhdpu7dE','images/sab.jpg')">
         <img src="images/dolmaro.jpg">
@@ -280,7 +280,7 @@ header p{
     </div>
     
     <div class="playlist-card"
-         onclick="openPlaylist('BOYNEXTDOOR- fadeaway','images/fadeaway.jpg','앞만 보고 달려가다 넘지 못하는 벽에 부딪히게 돼도 당황하지 말고, 준비한 걸 해',
+         onclick="openPlaylist('BOYNEXTDOOR- fadeaway','images/fadeaway.jpg','앞만 보고 달려가다<br>넘지 못하는 벽에<br>부딪히게 돼도<br>당황하지 말고, 준비한 걸 해',
 'https://youtu.be/I6StVU3kABM?si=kepROTRMfTCiY3UP','에스파- flowers',
 'https://youtu.be/EO7s8AzviQI?si=R6IqCmW7w3IaCe8V','images/aespa.jpg')">
         <img src="images/fadeaway.jpg">
@@ -288,7 +288,7 @@ header p{
     </div>
     
     <div class="playlist-card"
-         onclick="openPlaylist('WOODZ- HIJACK','images/hijack.jpg','난 겁 없이 살아 매일을 매일을 매일을 매일을',
+         onclick="openPlaylist('WOODZ- HIJACK','images/hijack.jpg','난 겁 없이 살아<br>매일을 매일을 매일을 매일을',
 'https://youtu.be/UKaLyV3ZQMM?si=4UAESwE6lebA082p','&team- go in blind',
 'https://youtu.be/106iN6cTUBY?si=L6LjO8C76UhQ70_X','images/blind.jpg')">
         <img src="images/hijack.jpg">
@@ -373,7 +373,7 @@ function openPlaylist(title, image, lyrics, lyricsLink, recommendText, recommend
     document.getElementById("playlistTitle").innerText = title;
     document.getElementById("coverImage").src = image;
 
-    document.getElementById("favoriteLyrics").innerText = lyrics;
+    document.getElementById("favoriteLyrics").innerHTML = lyrics;
     
      document.getElementById("lyricsButton").href = lyricsLink;
 
