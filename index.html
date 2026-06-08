@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Playlist</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Pretendard", sans-serif;
+}
+
+body{
+    background:#111;
+    color:white;
+}
+
+/* 상단 */
+header{
+    text-align:center;
+    padding:30px 20px;
+}
+
+header h1{
+    font-size:2rem;
+    color:#1DB954;
+}
+
+header p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+/* 플레이리스트 목록 */
+.playlist-grid{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.playlist-card{
+    background:#1a1a1a;
+    border-radius:15px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.playlist-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(29,185,84,.4);
+}
+
+.playlist-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.playlist-card h3{
+    padding:15px;
+    text-align:center;
+}
+
+/* 상세 화면 */
+.detail-page{
+    display:none;
+    max-width:800px;
+    margin:auto;
+    padding:30px;
+}
+
+.back-btn{
+    background:#1DB954;
+    border:none;
+    color:white;
+    padding:10px 20px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+
+.album-cover{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    display:block;
+    margin:auto;
+    border-radius:15px;
+}
+
+.playlist-title{
+    text-align:center;
+    margin:20px 0 30px;
+    font-size:2rem;
+}
+
+.song-list{
+    list-style:none;
+}
+
+.song-item{
+    background:#1a1a1a;
+    margin-bottom:10px;
+    padding:15px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.song-item:hover{
+    background:#222;
+}
+
+.song-info h4{
+    margin-bottom:5px;
+}
+
+.song-info p{
+    color:#aaa;
+    font-size:.9rem;
+}
+
+.song-link{
+    text-decoration:none;
+    color:#1DB954;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 플레이리스트 목록 화면 -->
+<div id="homePage">
+
+<header>
+    <h1>My Playlist</h1>
+    <p>좋아하는 플레이리스트를 선택하세요</p>
+</header>
+
+<div class="playlist-grid">
+
+    <div class="playlist-card"
+         onclick="openPlaylist('밤 산책','https://picsum.photos/500?1')">
+        <img src="https://picsum.photos/500?1">
+        <h3>밤 산책</h3>
+    </div>
+
+    <div class="playlist-card"
+         onclick="openPlaylist('드라이브','https://picsum.photos/500?2')">
+        <img src="https://picsum.photos/500?2">
+        <h3>드라이브</h3>
+    </div>
+
+    <div class="playlist-card"
+         onclick="openPlaylist('공부할 때','https://picsum.photos/500?3')">
+        <img src="https://picsum.photos/500?3">
+        <h3>공부할 때</h3>
+    </div>
+
+    <div class="playlist-card"
+         onclick="openPlaylist('새벽 감성','https://picsum.photos/500?4')">
+        <img src="https://picsum.photos/500?4">
+        <h3>새벽 감성</h3>
+    </div>
+
+</div>
+
+</div>
+
+<!-- 플레이리스트 상세 화면 -->
+<div class="detail-page" id="detailPage">
+
+<button class="back-btn" onclick="goBack()">
+← 뒤로가기
+</button>
+
+<img id="coverImage" class="album-cover">
+
+<h2 id="playlistTitle" class="playlist-title"></h2>
+
+<ul class="song-list">
+
+<li class="song-item">
+    <div class="song-info">
+        <h4>Ditto</h4>
+        <p>NewJeans</p>
+    </div>
+
+    <a class="song-link"
+       href="https://open.spotify.com/"
+       target="_blank">
+       듣기
+    </a>
+</li>
+
+<li class="song-item">
+    <div class="song-info">
+        <h4>Love wins all</h4>
+        <p>IU</p>
+    </div>
+
+    <a class="song-link"
+       href="https://music.youtube.com/"
+       target="_blank">
+       듣기
+    </a>
+</li>
+
+<li class="song-item">
+    <div class="song-info">
+        <h4>한 페이지가 될 수 있게</h4>
+        <p>DAY6</p>
+    </div>
+
+    <a class="song-link"
+       href="https://www.melon.com/"
+       target="_blank">
+       듣기
+    </a>
+</li>
+
+</ul>
+
+</div>
+
+<script>
+
+function openPlaylist(title, image){
+
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("detailPage").style.display = "block";
+
+    document.getElementById("playlistTitle").innerText = title;
+    document.getElementById("coverImage").src = image;
+}
+
+function goBack(){
+
+    document.getElementById("detailPage").style.display = "none";
+    document.getElementById("homePage").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
