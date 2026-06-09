@@ -138,8 +138,12 @@ header p{
     padding:25px;
     border-radius:15px;
     margin-top:20px;
-
     text-align:center;
+        
+    width:350px;
+        
+    display:flex;
+    flex-direction:column;
 }
 
 .info-box h3{
@@ -170,6 +174,8 @@ header p{
 }
     .info-container{
     display:flex;
+    justify-content:center;
+    align-items:stretch;
     gap:20px;
     margin-top:20px;
 }
@@ -183,11 +189,24 @@ header p{
 .recommend-info{
     flex:1;
     text-align:left;
+    
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 
+    
+#favoriteLyrics{
+    min-height:80px;
+}
+    
 #recommendText{
     text-align:left;
     margin-bottom:15px;
+    min-height:80px;
+}
+#lyricsButton{
+    margin-top:auto;
 }
 
 .recommend-cover{
