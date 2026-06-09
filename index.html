@@ -17,7 +17,23 @@ body{
     background:#111;
     color:white;
 }
+.logo-link{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:9999;
+}
 
+.school-logo{
+    width:60px;
+    height:auto;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.school-logo:hover{
+    transform:scale(1.08);
+}
 /* 상단 */
 header{
     text-align:center;
@@ -242,12 +258,29 @@ header p{
         height:90px;
     }
 
+    .logo-link{
+        top:10px;
+        left:10px;
+    }
+
+    .school-logo{
+        width:45px;
+    }
+
 }
 </style>
 </head>
 
 <body>
+<a href="http://swulife.swu.ac.kr/"
+   class="logo-link"
+   target="_blank">
 
+    <img src="images/swu_logo.png"
+         alt="서울여대 로고"
+         class="school-logo">
+
+</a>
 <!-- 플레이리스트 목록 화면 -->
 <div id="homePage">
 
