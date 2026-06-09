@@ -133,17 +133,10 @@ header p{
     color:#1DB954;
     font-weight:bold;
 }
-    .info-box{
-    background:#1a1a1a;
-    padding:25px;
-    border-radius:15px;
-    margin-top:20px;
-    text-align:center;
-        
-    width:380px;
-        
-    display:flex;
-    flex-direction:column;
+.info-box{
+    flex:1;
+    max-width:420px;
+    min-width:0;
 }
 
 .info-box h3{
@@ -184,15 +177,17 @@ header p{
     margin-top:20px;
 }
 .recommend-content{
-    display:grid;
-    grid-template-columns:1fr 130px;
-    grid-template-rows:auto auto;
-    gap:20px;
-    align-items:start;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:15px;
+
+    width:100%;
 }
 
 .recommend-info{
-    display:contents;
+    flex:1;
+    min-width:0;
 }
 
     
@@ -215,38 +210,31 @@ header p{
     text-align:center;
 }
 .recommend-cover{
-    grid-column:2;
-    grid-row:1;
-
-    width:130px;
-    height:130px;
+    width:100px;
+    height:100px;
     object-fit:cover;
     border-radius:12px;
+
+    flex-shrink:0;
+
+    max-width:100%;
 }
 @media (max-width:768px){
 
     .info-container{
         flex-direction:column;
+        align-items:center;
     }
 
-    .recommend-content{
-        flex-direction:column;
+    .info-box{
+        width:100%;
+        max-width:420px;
     }
 
-    .recommend-info{
-        text-align:center;
+    .recommend-cover{
+        width:90px;
+        height:90px;
     }
-
-    #recommendText{
-        text-align:center;
-    }
-#recommendButton{
-    grid-column:1 / span 2;
-    grid-row:2;
-
-    width:260px;
-    margin:0 auto;
-}
 
 }
 </style>
