@@ -185,19 +185,18 @@ header p{
 }
 .recommend-content{
     display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content:space-between;
-    gap:30px;
- align-items:flex-start;
+    height:100%;
 }
 
 .recommend-info{
-    flex:1;
-    text-align:left;
-    
+    width:100%;
+    text-align:center;
+
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
+    align-items:center;
 }
 
     
@@ -206,22 +205,21 @@ header p{
 }
     
 #recommendText{
-    text-align:left;
-    margin-bottom:15px;
+    text-align:center;
     min-height:80px;
+    margin-bottom:20px;
 }
-#lyricsButton{
-    margin-top:auto;
+#lyricsButton,
+#recommendButton{
+    width:260px;
+    text-align:center;
 }
-
 .recommend-cover{
-    width:120px;
-    height:120px;
+    width:130px;
+    height:130px;
     object-fit:cover;
     border-radius:12px;
-    flex-shrink:0;
-    
-    margin-left:15px;
+    margin-bottom:20px;
 }
 @media (max-width:768px){
 
@@ -367,21 +365,15 @@ header p{
 
         <div class="recommend-info">
 
-            <p id="recommendText">
-                추천곡이 표시됩니다.
-            </p>
+<p id="recommendText"></p>
 
-            <a id="recommendButton"
-               class="recommend-btn"
-               href="#"
-               target="_blank">
-               추천곡 들으러 가기
-            </a>
+<img id="recommendCover"
+     class="recommend-cover">
 
-        </div>
-
-        <img id="recommendCover"
-             class="recommend-cover"
+<a id="recommendButton"
+   class="recommend-btn">
+   추천곡 들으러 가기
+</a>
              src=""
              alt="추천곡 앨범 커버">
 
